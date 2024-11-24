@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIPS MASTER - Blog Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar effectcss">
+        <div class="logo">PIPS MASTER</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signals.html">Signals</a></li>
+            <li><a href="blog.html" class="active">Posts</a></li>
+            <li><a href="admin-login.html">Admin</a></li>
+        </ul>
+    </nav>
+
+    <article class="blog-post-page">
+        <div class="section-overlay"></div>
+        
+        <!-- Back Button -->
+        <a href="blog.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Posts
+        </a>
+
+        <!-- Blog Post Content -->
+        <div class="blog-post-container" id="blogPost">
+            <!-- Dynamically populated -->
+        </div>
+
+        <!-- Related Posts -->
+        <div class="related-posts">
+            <h3>Related Posts</h3>
+            <div class="related-posts-grid" id="relatedPosts">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading post...</p>
+        </div>
+    </article>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="blog-post.js"></script>
+</body>
+</html> 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIPS MASTER - Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar effectcss">
+        <div class="logo">PIPS MASTER</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signals.html">Signals</a></li>
+            <li><a href="exchange.html">Exchange</a></li>
+            <li><a href="#" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="contact-page">
+        <div class="section-overlay"></div>
+        
+        <!-- Quick Contact Options -->
+        <div class="quick-contact">
+            <a href="https://t.me/Pipsmarket4x" target="_blank" class="contact-option telegram">
+                <i class="fab fa-telegram"></i>
+                <span>Join Channel</span>
+                <small>@Pipsmarket4x</small>
+            </a>
+            <a href="https://t.me/PIPSMASTER22" target="_blank" class="contact-option telegram">
+                <i class="fab fa-telegram"></i>
+                <span>Contact Admin</span>
+                <small>@PIPSMASTER22</small>
+            </a>
+        </div>
+
+        <!-- Inquiry Form -->
+        <div class="inquiry-section">
+            <h2>Send Us a Message</h2>
+            <form id="inquiryForm" class="inquiry-form">
+                <div class="form-group">
+                    <label>Telegram Username*</label>
+                    <input type="text" id="telegramUsername" required 
+                           placeholder="@yourusername">
+                </div>
+                
+                <div class="form-group">
+                    <label>Inquiry Type</label>
+                    <select id="inquiryType" required>
+                        <option value="">Select Inquiry Type</option>
+                        <option value="signals">Trading Signals</option>
+                        <option value="account">Account Management</option>
+                        <option value="exchange">Exchange Services</option>
+                        <option value="support">Technical Support</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Message*</label>
+                    <textarea id="message" rows="5" required 
+                             placeholder="Please describe your inquiry..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Available Support Hours</h3>
+            <div class="support-hours">
+                <div class="time-slot">
+                    <i class="fas fa-clock"></i>
+                    <span>24/7 Telegram Support</span>
+                </div>
+                <div class="response-time">
+                    <i class="fas fa-bolt"></i>
+                    <span>Average Response Time: 5 minutes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="contact.js"></script>
+</body>
+</html> 

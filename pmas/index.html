@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIPS MASTER - Gold Trading Signals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.css">
+</head>
+<body>
+    <!-- Mechanical Grid Background -->
+    <div class="mechanical-grid">
+        <div class="grid-overlay"></div>
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-effect">
+        <div class="logo">
+            <img src="images/logo.png" alt="PIPS MASTER">
+            <span>PIPS MASTER</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="signals.html">Signals</a></li>
+            <li><a href="exchange.html">Exchange</a></li>
+            <li><a href="blog.html">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero glass-effect">
+        <div class="hero-content">
+            <h1>AI-Powered Gold Trading</h1>
+            <p>Professional Signals & Account Management</p>
+            
+            <!-- Live Stats -->
+            <div class="live-stats">
+                <div class="stat-item glass-effect">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <span class="stat-value" id="memberCount">0</span>
+                        <span class="stat-label">Active Members</span>
+                    </div>
+                </div>
+                <div class="stat-item glass-effect">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="stat-info">
+                        <span class="stat-value">85%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                </div>
+                <div class="stat-item glass-effect">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-info">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="hero-buttons">
+                <a href="#signals" class="cta-button primary glass-effect">
+                    <i class="fas fa-signal"></i>
+                    Latest Signals
+                </a>
+                <a href="https://t.me/your_channel" target="_blank" class="cta-button telegram glass-effect">
+                    <i class="fab fa-telegram"></i>
+                    Join Channel
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Latest Signals Section -->
+    <section id="signals" class="signals-preview glass-effect">
+        <div class="section-header">
+            <h2>Latest Gold Signals</h2>
+            <a href="signals.html" class="view-all glass-effect">
+                View All Signals <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="signals-container" id="latestSignals">
+            <!-- Latest signals will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Live Chart Section -->
+    <section class="chart-section glass-effect">
+        <div class="section-header">
+            <h2>Live Gold Analysis</h2>
+            <div class="chart-timeframes">
+                <button data-interval="60" class="glass-effect">1H</button>
+                <button data-interval="240" class="glass-effect">4H</button>
+                <button data-interval="D" class="glass-effect active">1D</button>
+                <button data-interval="W" class="glass-effect">1W</button>
+            </div>
+        </div>
+        <div class="chart-container glass-effect">
+            <div id="tradingview_gold"></div>
+        </div>
+    </section>
+
+    <!-- Exchange Preview -->
+    <section class="exchange-preview glass-effect">
+        <div class="section-header">
+            <h2>Currency Exchange</h2>
+            <div class="exchange-rates">
+                <div class="rate-card glass-effect">
+                    <div class="rate-header">Buy USDT</div>
+                    <div class="rate-value">1 USDT = 270 PKR</div>
+                    <small>TRC20 Network</small>
+                </div>
+                <div class="rate-card glass-effect">
+                    <div class="rate-header">Sell USDT</div>
+                    <div class="rate-value">1 USDT = 268 PKR</div>
+                    <small>Instant Payment</small>
+                </div>
+            </div>
+        </div>
+        <a href="exchange.html" class="cta-button glass-effect">Start Exchange</a>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="blog-preview glass-effect">
+        <div class="section-header">
+            <h2>Latest Insights</h2>
+            <a href="blog.html" class="view-all glass-effect">
+                View All Posts <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="blog-container" id="latestPosts">
+            <!-- Latest blog posts will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Account Management Preview -->
+    <section class="account-preview glass-effect">
+        <div class="section-header">
+            <h2>Professional Account Management</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card glass-effect">
+                <i class="fas fa-percentage"></i>
+                <h3>50% Profit Share</h3>
+                <p>We only earn when you profit</p>
+            </div>
+            <div class="feature-card glass-effect">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Risk Management</h3>
+                <p>Advanced strategies to protect your capital</p>
+            </div>
+            <div class="feature-card glass-effect">
+                <i class="fas fa-chart-line"></i>
+                <h3>Performance Reports</h3>
+                <p>Regular updates on your account's performance</p>
+            </div>
+            <div class="feature-card glass-effect">
+                <i class="fas fa-coins"></i>
+                <h3>Multiple Payment Methods</h3>
+                <p>Convenient deposit and withdrawal options</p>
+            </div>
+        </div>
+        <a href="account-management.html" class="cta-button glass-effect">Learn More</a>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="contact-preview glass-effect">
+        <div class="section-header">
+            <h2>Get Started Today</h2>
+        </div>
+        <div class="contact-options">
+            <a href="https://t.me/your_channel" class="contact-option telegram glass-effect">
+                <i class="fab fa-telegram"></i>
+                <span>Join Telegram</span>
+                <small>For trading signals</small>
+            </a>
+            <a href="https://wa.me/your_number" class="contact-option whatsapp glass-effect">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+                <small>24/7 Support</small>
+            </a>
+            <a href="contact.html" class="contact-option email glass-effect">
+                <i class="fas fa-envelope"></i>
+                <span>Email Us</span>
+                <small>For inquiries</small>
+            </a>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html> 

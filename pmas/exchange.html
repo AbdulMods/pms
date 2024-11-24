@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIPS MASTER - Exchange Rates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar effectcss">
+        <div class="logo">PIPS MASTER</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signals.html">Signals</a></li>
+            <li><a href="#" class="active">Exchange</a></li>
+            <li><a href="admin-login.html">Admin</a></li>
+        </ul>
+    </nav>
+
+    <section class="exchange-page">
+        <div class="section-overlay"></div>
+        
+        <!-- Exchange Header -->
+        <div class="exchange-header">
+            <h1>Currency Exchange</h1>
+            <p>Real-time rates for multiple payment methods</p>
+        </div>
+
+        <!-- Exchange Calculator -->
+        <div class="exchange-calculator">
+            <div class="calculator-container">
+                <div class="exchange-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>From</label>
+                            <select id="fromCurrency" required>
+                                <option value="PKR">PKR</option>
+                                <option value="USDT">USDT (TRC20)</option>
+                                <option value="BTC">BTC</option>
+                            </select>
+                        </div>
+                        <button class="swap-btn" id="swapCurrencies">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        <div class="form-group">
+                            <label>To</label>
+                            <select id="toCurrency" required>
+                                <option value="USDT">USDT (TRC20)</option>
+                                <option value="PKR">PKR</option>
+                                <option value="BTC">BTC</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Amount</label>
+                            <input type="number" id="amount" step="any" required>
+                        </div>
+                        <div class="form-group result">
+                            <label>You Get</label>
+                            <div class="result-amount" id="result">0.00</div>
+                        </div>
+                    </div>
+                    <div class="rate-info">
+                        <span>Current Rate:</span>
+                        <span id="currentRate">1 USDT = 270 PKR</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Rates Table -->
+        <div class="rates-section">
+            <h2>Live Exchange Rates</h2>
+            <div class="rates-container">
+                <div class="rates-tabs">
+                    <button class="tab-btn active" data-tab="buy">Buy Rates</button>
+                    <button class="tab-btn" data-tab="sell">Sell Rates</button>
+                </div>
+                <div class="rates-content">
+                    <div class="tab-content active" id="buyRates">
+                        <div class="rate-card">
+                            <div class="rate-header">
+                                <i class="fas fa-coins"></i>
+                                <span>USDT (TRC20)</span>
+                            </div>
+                            <div class="rate-body">
+                                <div class="rate-value">1 USDT = 270 PKR</div>
+                                <div class="rate-trend up">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>2.5%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- More rate cards -->
+                    </div>
+                    <div class="tab-content" id="sellRates">
+                        <!-- Sell rate cards will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+            <h2>Supported Payment Methods</h2>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <i class="fab fa-bitcoin"></i>
+                    <span>Bitcoin</span>
+                    <small>Min: 0.001 BTC</small>
+                </div>
+                <div class="method-card">
+                    <i class="fas fa-coins"></i>
+                    <span>USDT TRC20</span>
+                    <small>Min: 10 USDT</small>
+                </div>
+                <!-- Add more payment methods -->
+            </div>
+        </div>
+
+        <!-- Exchange Process -->
+        <div class="exchange-process">
+            <h2>How It Works</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Calculate Rate</h3>
+                    <p>Check current exchange rates</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Send Payment</h3>
+                    <p>Transfer funds to our wallet</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Receive Exchange</h3>
+                    <p>Get your exchanged currency</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add this after the exchange calculator section -->
+        <section class="transaction-section">
+            <div class="transaction-tabs">
+                <button class="tab-btn active" data-tab="buy">Buy Currency</button>
+                <button class="tab-btn" data-tab="sell">Sell Currency</button>
+            </div>
+
+            <!-- Buy Form -->
+            <div class="transaction-content active" id="buyForm">
+                <div class="transaction-card">
+                    <h3>Buy Currency</h3>
+                    <form id="buyRequestForm" class="transaction-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Select Currency</label>
+                                <select id="buyCurrency" required>
+                                    <option value="USDT">USDT (TRC20)</option>
+                                    <option value="BTC">Bitcoin</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Amount to Buy</label>
+                                <input type="number" id="buyAmount" step="any" required>
+                            </div>
+                        </div>
+                        <div class="rate-display">
+                            <span>Current Rate:</span>
+                            <span id="buyRate">1 USDT = 270 PKR</span>
+                        </div>
+                        <div class="total-amount">
+                            <span>You Pay:</span>
+                            <span id="totalPay">0 PKR</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Wallet Address</label>
+                            <input type="text" id="receivingWallet" required>
+                            <small>Enter the wallet address where you want to receive the currency</small>
+                        </div>
+                        <div class="payment-proof">
+                            <label>Upload Payment Proof</label>
+                            <div class="upload-area" id="buyProofUpload">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Click to upload or drag and drop</span>
+                                <input type="file" accept="image/*" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-shopping-cart"></i> Submit Buy Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sell Form -->
+            <div class="transaction-content" id="sellForm">
+                <div class="transaction-card">
+                    <h3>Sell Currency</h3>
+                    <form id="sellRequestForm" class="transaction-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Select Currency</label>
+                                <select id="sellCurrency" required>
+                                    <option value="USDT">USDT (TRC20)</option>
+                                    <option value="BTC">Bitcoin</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Amount to Sell</label>
+                                <input type="number" id="sellAmount" step="any" required>
+                            </div>
+                        </div>
+                        <div class="rate-display">
+                            <span>Current Rate:</span>
+                            <span id="sellRate">1 USDT = 268 PKR</span>
+                        </div>
+                        <div class="total-amount">
+                            <span>You Receive:</span>
+                            <span id="totalReceive">0 PKR</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Bank Details</label>
+                            <select id="bankType" required>
+                                <option value="">Select Bank/Payment Method</option>
+                                <option value="bank">Bank Transfer</option>
+                                <option value="jazzcash">JazzCash</option>
+                                <option value="easypaisa">EasyPaisa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Account Number/IBAN</label>
+                            <input type="text" id="accountNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Account Holder Name</label>
+                            <input type="text" id="accountName" required>
+                        </div>
+                        <div class="payment-proof">
+                            <label>Upload Transaction Proof</label>
+                            <div class="upload-area" id="sellProofUpload">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Click to upload or drag and drop</span>
+                                <input type="file" accept="image/*" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-dollar-sign"></i> Submit Sell Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add this section to display company wallet addresses -->
+        <section class="company-wallets">
+            <h3>Our Wallet Addresses</h3>
+            <div class="wallet-grid">
+                <div class="wallet-card">
+                    <i class="fab fa-bitcoin"></i>
+                    <span class="wallet-label">Bitcoin (BTC)</span>
+                    <div class="wallet-address">
+                        <input type="text" value="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" readonly>
+                        <button class="copy-btn" data-clipboard-text="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="wallet-card">
+                    <i class="fas fa-coins"></i>
+                    <span class="wallet-label">USDT (TRC20)</span>
+                    <div class="wallet-address">
+                        <input type="text" value="TRx1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh" readonly>
+                        <button class="copy-btn" data-clipboard-text="TRx1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add this section for users to see their own transactions -->
+        <section class="user-transactions">
+            <h3>Your Recent Transactions</h3>
+            <div class="transactions-container">
+                <div class="transaction-tabs">
+                    <button class="tab-btn active" data-tab="pending">Pending</button>
+                    <button class="tab-btn" data-tab="completed">Completed</button>
+                </div>
+                
+                <div class="transaction-list" id="userTransactions">
+                    <!-- Only user's transactions will be shown here -->
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="exchange.js"></script>
+</body>
+</html> 

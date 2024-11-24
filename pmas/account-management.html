@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIPS MASTER - Account Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar effectcss">
+        <div class="logo">PIPS MASTER</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signals.html">Signals</a></li>
+            <li><a href="blog.html">Posts</a></li>
+            <li><a href="#" class="active">Account Management</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="account-hero">
+        <div class="section-overlay"></div>
+        <h1>Professional Account Management</h1>
+        <p>Let our experts manage your trading account and maximize your profits</p>
+    </section>
+
+    <!-- Profit Share Model -->
+    <section class="profit-share-section">
+        <div class="section-overlay"></div>
+        <div class="profit-share-container">
+            <div class="profit-share-card">
+                <div class="share-percentage">
+                    <span>50%</span>
+                    <p>Profit Share</p>
+                </div>
+                <div class="share-details">
+                    <p>We only earn when you profit</p>
+                    <ul class="benefit-list">
+                        <li><i class="fas fa-check"></i> No management fees</li>
+                        <li><i class="fas fa-check"></i> Monthly profit distribution</li>
+                        <li><i class="fas fa-check"></i> Transparent reporting</li>
+                        <li><i class="fas fa-check"></i> Professional risk management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Stats -->
+    <section class="performance-section">
+        <div class="section-overlay"></div>
+        <h2>Our Performance</h2>
+        <div class="performance-grid">
+            <div class="performance-card">
+                <span class="performance-value">15%</span>
+                <span class="performance-label">Average Monthly Return</span>
+            </div>
+            <div class="performance-card">
+                <span class="performance-value">2%</span>
+                <span class="performance-label">Maximum Risk per Trade</span>
+            </div>
+            <div class="performance-card">
+                <span class="performance-value">85%</span>
+                <span class="performance-label">Win Rate</span>
+            </div>
+            <div class="performance-card">
+                <span class="performance-value">500+</span>
+                <span class="performance-label">Active Accounts</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="payment-section">
+        <div class="section-overlay"></div>
+        <h2>Supported Payment Methods</h2>
+        <div class="payment-grid">
+            <div class="payment-method">
+                <i class="fab fa-bitcoin"></i>
+                <span>Bitcoin</span>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-coins"></i>
+                <span>USDT (TRC20)</span>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-wallet"></i>
+                <span>Skrill</span>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-wallet"></i>
+                <span>Neteller</span>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>RedDot Pay</span>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>PayTM</span>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>UPI</span>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>JazzCash</span>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>SadaPay</span>
+            </div>
+            <div class="payment-method">
+                <i class="fas fa-coins"></i>
+                <span>All Crypto</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="section-overlay"></div>
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            <!-- Testimonials will be dynamically loaded -->
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section">
+        <div class="section-overlay"></div>
+        <h2>Get Started Today</h2>
+        <div class="contact-container">
+            <form class="contact-form" id="accountInquiryForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="investment">Investment Amount (USD)</label>
+                    <input type="number" id="investment" name="investment" min="1000" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="account-management.js"></script>
+</body>
+</html> 
